@@ -39,7 +39,7 @@ end CPU_mem;
 
 architecture rtl of CPU_mem is
 
-signal cpu_clk			: std_logic;
+signal cpu_clk			        : std_logic;
 signal PHI1				: std_logic;
 signal PHI2				: std_logic;
 signal Q5				: std_logic;
@@ -51,7 +51,7 @@ signal A7_7				: std_logic;
 signal A8_6				: std_logic;
 
 signal H256				: std_logic;
-signal H256_n			: std_logic;
+signal H256_n			        : std_logic;
 signal H128				: std_logic;
 signal H64				: std_logic;
 signal H32				: std_logic;
@@ -65,55 +65,55 @@ signal V32				: std_logic;
 signal V16				: std_logic;
 signal V8				: std_logic;
 
-signal CPU_Reset_n	: std_logic;
-signal IRQ_n			: std_logic;
+signal CPU_Reset_n	                : std_logic;
+signal IRQ_n			        : std_logic;
 signal RW_n				: std_logic;
 signal RnW 				: std_logic;
-signal A					: std_logic_vector(15 downto 0);
+signal A				: std_logic_vector(15 downto 0);
 signal Adr				: std_logic_vector(9 downto 0);
-signal cpuDin			: std_logic_vector(7 downto 0);
-signal cpuDout			: std_logic_vector(7 downto 0);
-signal DBUS_n			: std_logic_vector(7 downto 0);
+signal cpuDin			        : std_logic_vector(7 downto 0);
+signal cpuDout			        : std_logic_vector(7 downto 0);
+signal DBUS_n			        : std_logic_vector(7 downto 0);
 signal DBUS				: std_logic_vector(7 downto 0);
 
 -- No ROM 0 or 1 on the EPROM based version
-signal ROM2_dout		: std_logic_vector(7 downto 0);
-signal ROM3_dout		: std_logic_vector(7 downto 0);
-signal ROM4_dout		: std_logic_vector(7 downto 0);
-signal ROM_dout		: std_logic_vector(7 downto 0);
+signal ROM2_dout		        : std_logic_vector(7 downto 0);
+signal ROM3_dout		        : std_logic_vector(7 downto 0);
+signal ROM4_dout		        : std_logic_vector(7 downto 0);
+signal ROM_dout		                : std_logic_vector(7 downto 0);
 
 signal ROM2				: std_logic;
 signal ROM3				: std_logic;
 signal ROM4				: std_logic;
-signal ROM_ce			: std_logic;
-signal ROM_mux_in		: std_logic_vector(2 downto 0);
+signal ROM_ce			        : std_logic;
+signal ROM_mux_in		        : std_logic_vector(2 downto 0);
 
-signal cpuRAM_dout	: std_logic_vector(7 downto 0);
-signal Vram_dout		: std_logic_vector(7 downto 0);
-signal RAM_addr		: std_logic_vector(9 downto 0) := (others => '0');
-signal Vram_addr		: std_logic_vector(9 downto 0) := (others => '0');
-signal scanbus			: std_logic_vector(9 downto 0) := (others => '0');
-signal RAM_dout		: std_logic_vector(7 downto 0);
-signal RAM_we			: std_logic;
-signal RAM_RW_n 		: std_logic;
-signal RAM_ce_n		: std_logic;
-signal RAM_n			: std_logic; 
+signal cpuRAM_dout	                : std_logic_vector(7 downto 0);
+signal Vram_dout		        : std_logic_vector(7 downto 0);
+signal RAM_addr		                : std_logic_vector(9 downto 0) := (others => '0');
+signal Vram_addr		        : std_logic_vector(9 downto 0) := (others => '0');
+signal scanbus			        : std_logic_vector(9 downto 0) := (others => '0');
+signal RAM_dout		                : std_logic_vector(7 downto 0);
+signal RAM_we			        : std_logic;
+signal RAM_RW_n 		        : std_logic;
+signal RAM_ce_n		                : std_logic;
+signal RAM_n			        : std_logic; 
 signal WRAM				: std_logic;
-signal WRITE_n			: std_logic;
+signal WRITE_n			        : std_logic;
 
-signal F2_in			: std_logic_vector(3 downto 0);
-signal F2_out			: std_logic_vector(9 downto 0);
-signal D2_in			: std_logic_vector(3 downto 0);
-signal D2_out			: std_logic_vector(9 downto 0);
-signal E8_in			: std_logic_vector(3 downto 0);
-signal E8_out			: std_logic_vector(9 downto 0);
+signal F2_in			        : std_logic_vector(3 downto 0);
+signal F2_out			        : std_logic_vector(9 downto 0);
+signal D2_in			        : std_logic_vector(3 downto 0);
+signal D2_out			        : std_logic_vector(9 downto 0);
+signal E8_in			        : std_logic_vector(3 downto 0);
+signal E8_out			        : std_logic_vector(9 downto 0);
 
-signal Sync1			: std_logic;
-signal Sync1_n			: std_logic;
-signal Sync2_n			: std_logic;
-signal Switch_n		: std_logic;
-signal Display_n		: std_logic;
-signal Addec_bus		: std_logic_vector(7 downto 0);
+signal Sync1			        : std_logic;
+signal Sync1_n			        : std_logic;
+signal Sync2_n			        : std_logic;
+signal Switch_n		                : std_logic;
+signal Display_n		        : std_logic;
+signal Addec_bus		        : std_logic_vector(7 downto 0);
 
 signal J6_5				: std_logic;
 signal J6_9				: std_logic;
