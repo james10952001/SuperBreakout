@@ -21,8 +21,8 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 
 entity motion is 
 port(		
-			Clk6			: in  std_logic; -- 6MHz on schematic
-			Phi2			: in  std_logic;
+			Clk6		: in  std_logic; -- 6MHz on schematic
+			Phi2		: in  std_logic;
 			Display		: in  std_logic_vector(7 downto 0);
 			H256_s		: in  std_logic; -- 256H* on schematic
 			VCount		: in  std_logic_vector(7 downto 0);
@@ -36,26 +36,26 @@ end motion;
 
 architecture rtl of motion is
 
-signal A			: std_logic;
-signal B			: std_logic;
-signal C			: std_logic;
-signal D			: std_logic;
-signal E			: std_logic;
-signal F			: std_logic;
-signal G			: std_logic;
-signal H			: std_logic;
-signal I			: std_logic;
+signal A		: std_logic;
+signal B		: std_logic;
+signal C		: std_logic;
+signal D		: std_logic;
+signal E		: std_logic;
+signal F		: std_logic;
+signal G		: std_logic;
+signal H		: std_logic;
+signal I		: std_logic;
 signal J 		: std_logic;
-signal K			: std_logic;
-signal L			: std_logic;
-signal M			: std_logic;
-signal N			: std_logic;
+signal K		: std_logic;
+signal L		: std_logic;
+signal M		: std_logic;
+signal N		: std_logic;
 
 signal phi0		: std_logic;
 
-signal LDH1_n	: std_logic;
-signal LDH2_n	: std_logic;
-signal LDH3_n	: std_logic;
+signal LDH1_n	        : std_logic;
+signal LDH2_n	        : std_logic;
+signal LDH3_n	        : std_logic;
 
 signal LDV1A_n		: std_logic;
 signal LDV2A_n		: std_logic;
@@ -67,20 +67,20 @@ signal Ball3_Inh	: std_logic;
 
 signal LM4_sum		: std_logic_vector(7 downto 0) := (others => '0');
 
-signal N4_8			: std_logic;
+signal N4_8		: std_logic;
 
 signal H256_n		: std_logic;
-signal H256			: std_logic;
-signal H64 			: std_logic;
-signal H32			: std_logic;
-signal H16			: std_logic;
-signal H8			: std_logic;
-signal H4			: std_logic;
+signal H256		: std_logic;
+signal H64 		: std_logic;
+signal H32		: std_logic;
+signal H16		: std_logic;
+signal H8		: std_logic;
+signal H4		: std_logic;
 
 signal L5_reg		: std_logic_vector(4 downto 0) := (others => '0');
 
-signal J8_3			: std_logic;
-signal J8_6			: std_logic;
+signal J8_3		: std_logic;
+signal J8_6		: std_logic;
 
 signal K8_in		: std_logic_vector(3 downto 0) := (others => '0');
 signal K8_out		: std_logic_vector(9 downto 0) := (others => '0');
@@ -95,7 +95,7 @@ signal Ball1_reg	: std_logic_vector(7 downto 0) := (others => '0');
 signal Ball2_reg	: std_logic_vector(7 downto 0) := (others => '0');
 signal Ball3_reg 	: std_logic_vector(7 downto 0) := (others => '0');
 
-signal Vid			: std_logic_vector(7 downto 0) := (others => '0');
+signal Vid		: std_logic_vector(7 downto 0) := (others => '0');
 
 
 begin
